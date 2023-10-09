@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ê²Œì‹œë¬¼ ì¶”ê°€</title>
+    <title>°Ô½Ã¹° Ãß°¡</title>
 
     <style>
       body {
         font-family: Arial, sans-serif;
         text-align: center;
-        background-color: #f0e6d2; /* í¬ë¦¼ ìƒ‰ ë°°ê²½ */
+        background-color: #f0e6d2; /* Å©¸² »ö ¹è°æ */
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* í™”ë©´ ë†’ì´ì— ë§ê²Œ ì •ë ¬ */
+        height: 100vh; /* È­¸é ³ôÀÌ¿¡ ¸Â°Ô Á¤·Ä */
       }
       h1 {
         color: #333;
@@ -73,61 +73,75 @@
       }
     </style>
     <script>
-      function showConfirmation() {
-        // Display a confirmation dialog for deletion
-        var userConfirmed = confirm("ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤");
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var age = document.getElementById("age").value;
 
-        // If user clicks "OK" in the confirmation dialog, proceed with deletion
-        if (userConfirmed) {
-          window.location.href = "index.html";
+        if (name === "" || email === "" || age === "") {
+          alert("¸ğµç ÇÊµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+          return false; // Á¦Ãâ ¹æÁö
         }
+
+        if (isNaN(age) || age < 0) {
+          alert("³ªÀÌ´Â À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.");
+          return false; // Á¦Ãâ ¹æÁö
+        }
+
+        return true; // Á¦Ãâ Çã¿ë
       }
     </script>
   </head>
   <body>
     <form>
-      <h1>ìƒˆë¡œìš´ ì¹œêµ¬ ë“±ë¡</h1>
-      <label for="name">ì´ë¦„:</label>
+      <h1>±âÁ¸ ÇÁ·ÎÇÊ ¼öÁ¤</h1>
+      <label for="name">ÀÌ¸§:</label>
       <input type="text" id="name" name="name" /><br /><br />
 
-      <label for="email">ì´ë©”ì¼:</label>
+      <label for="email">ÀÌ¸ŞÀÏ:</label>
       <input type="email" id="email" name="email" /><br /><br />
 
       <div class="radio-group">
-        <label>ì„±ë³„:</label>
-        <input type="radio" id="male" name="gender" value="ë‚¨ì„±" />
-        <label for="male">ë‚¨ì„±</label>
-        <input type="radio" id="female" name="gender" value="ì—¬ì„±" />
-        <label for="female">ì—¬ì„±</label>
+        <label>¼ºº°:</label>
+        <input type="radio" id="male" name="gender" value="³²¼º" />
+        <label for="male">³²¼º</label>
+        <input type="radio" id="female" name="gender" value="¿©¼º" />
+        <label for="female">¿©¼º</label>
       </div>
       <br />
 
-      <label for="age">ë‚˜ì´:</label>
+      <label for="age">³ªÀÌ:</label>
       <input type="number" id="age" name="age" /><br /><br />
 
-      <label for="color">ì¢‹ì•„í•˜ëŠ” ìƒ‰ìƒ:</label>
+      <label for="color">ÁÁ¾ÆÇÏ´Â »ö»ó:</label>
       <select id="color" name="color">
-        <option value="ë¹¨ê°•">ë¹¨ê°•</option>
-        <option value="íŒŒë‘">íŒŒë‘</option>
-        <option value="ë…¸ë‘">ë…¸ë‘</option>
-        <option value="ì´ˆë¡">ì´ˆë¡</option></select
+        <option value="»¡°­">»¡°­</option>
+        <option value="ÆÄ¶û">ÆÄ¶û</option>
+        <option value="³ë¶û">³ë¶û</option>
+        <option value="ÃÊ·Ï">ÃÊ·Ï</option></select
       ><br /><br />
 
-      <label for="hobby">ì·¨ë¯¸:</label>
+      <label for="hobby">Ãë¹Ì:</label>
       <select id="hobby" name="hobby">
-        <option value="ìŒì•…">ìŒì•…</option>
-        <option value="ì˜í™”">ì˜í™”</option>
-        <option value="ì—¬í–‰">ì—¬í–‰</option></select
+        <option value="À½¾Ç">À½¾Ç</option>
+        <option value="¿µÈ­">¿µÈ­</option>
+        <option value="¿©Çà">¿©Çà</option></select
       ><br /><br />
 
-      <label for="birthdate">ìƒì¼:</label>
+      <label for="birthdate">»ıÀÏ:</label>
       <input type="date" id="birthdate" name="birthdate" /><br /><br />
 
-      <label for="message">ë©”ëª¨:</label><br />
+      <label for="message">¸Ş¸ğ:</label><br />
       <textarea id="message" name="message" rows="4" cols="50"></textarea
       ><br /><br />
 
-      <button class="button" onclick="showConfirmation()">ì œì¶œ</button>
+      <input type="submit" value="Á¦Ãâ" onclick="showConfirmation()" />
     </form>
+    <script>
+      function showConfirmation() {
+        alert("°Ô½Ã¹°ÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù");
+        window.location.href = "index.html"; // index.html·Î ÀÌµ¿
+      }
+    </script>
   </body>
 </html>

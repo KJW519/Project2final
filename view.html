@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>상세 정보</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0e6d2; /* 크림 색 배경 */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* 화면 높이에 맞게 정렬 */
+      }
+      h1 {
+        color: #333;
+        margin-top: 0;
+      }
+      div {
+        max-width: 400px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #0073e6;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      a.button {
+        text-decoration: none;
+        color: white;
+        background-color: green;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      button.edit-button {
+        background-color: #00cc00; /* 수정 버튼 색상 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>상세 정보</h1>
+
+    <div>
+      <label for="name">이름:</label>
+      <p id="name">John Doe</p>
+
+      <label for="email">이메일:</label>
+      <p id="email">johndoe@example.com</p>
+
+      <label for="gender">성별:</label>
+      <p id="gender">남성</p>
+
+      <label for="age">나이:</label>
+      <p id="age">30</p>
+
+      <label for="color">좋아하는 색상:</label>
+      <p id="color">파랑</p>
+
+      <label for="hobby">취미:</label>
+      <p id="hobby">음악, 여행</p>
+
+      <label for="birthdate">생일:</label>
+      <p id="birthdate">1990-01-01</p>
+
+      <label for="message">메모:</label>
+      <p id="message">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <button class="button" onclick="deleteRecord()">삭제</button>
+      <a class="button edit-button" href="edit.html">수정</a>
+      <!-- 수정 페이지로 이동 -->
+    </div>
+
+    <script>
+      function deleteRecord() {
+        // 여기에서 데이터 삭제 또는 처리를 수행할 수 있습니다.
+        confirm("게시물이 삭제되었습니다");
+        window.location.href = "index.html"; // 삭제 후 index.html로 이동
+      }
+    </script>
+  </body>
+</html>
