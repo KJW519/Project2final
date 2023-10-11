@@ -96,22 +96,28 @@
     <form>
       <h1>기존 프로필 수정</h1>
       <label for="name">이름:</label>
-      <input type="text" id="name" name="name" /><br /><br />
+      <input type="text" id="name" name="name" value="강준원" /><br /><br />
 
       <label for="email">이메일:</label>
-      <input type="email" id="email" name="email" /><br /><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value="jwkang519@gmail.com"
+      /><br /><br />
 
       <div class="radio-group">
         <label>성별:</label>
-        <input type="radio" id="male" name="gender" value="남성" />
+        <input type="radio" id="male" name="gender" value="남성" checked />
         <label for="male">남성</label>
         <input type="radio" id="female" name="gender" value="여성" />
         <label for="female">여성</label>
       </div>
+
       <br />
 
       <label for="age">나이:</label>
-      <input type="number" id="age" name="age" /><br /><br />
+      <input type="number" id="age" name="age" value="20" /><br /><br />
 
       <label for="color">좋아하는 색상:</label>
       <select id="color" name="color">
@@ -129,7 +135,8 @@
       ><br /><br />
 
       <label for="birthdate">생일:</label>
-      <input type="date" id="birthdate" name="birthdate" /><br /><br />
+      <input type="date" id="birthdate" name="birthdate" value="2004-05-19" />
+      <br /><br />
 
       <label for="message">메모:</label><br />
       <textarea id="message" name="message" rows="4" cols="50"></textarea
@@ -139,7 +146,7 @@
     </form>
     <script>
       function showConfirmation() {
-        alert("게시물이 수정되었습니다");
+        confirm("게시물이 수정되었습니다");
         window.location.href = "index.html"; // index.html로 이동
       }
     </script>
