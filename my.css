@@ -1,21 +1,23 @@
-/* 기본 스타일(컴퓨터용) */
-/* 여기에 컴퓨터용 스타일을 추가하세요 */
-
-/* 모바일 스타일 */
-@media (max-width: 767px) {
-  /* 배경 색 변경 */
+@media (max-width: 600px) {
   body {
-    background-color: #f0e6d2; /* 모바일 화면 배경색 */
+    font-size: 20px;
+    background-color: #87ceeb;
+    margin: 10px;
   }
-
-  /* 테이블 조정 */
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
   table {
-    width: 100%; /* 테이블이 화면 너비에 맞게 조정됨 */
-    max-width: 100%;
+    width: 100%;
+    margin: 0;
   }
-
-  /* 테이블 셀 스타일 조정 (예: 여백 추가) */
-  table td {
-    padding: 10px;
+  th,
+  td {
+    padding: 5px;
+    font-size: 12px;
+  }
+  .button {
+    width: 100%;
   }
 }
