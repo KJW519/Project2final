@@ -71,21 +71,43 @@
       .radio-group label {
         margin-right: 10px;
       }
+      .button {
+        background-color: #0073e6;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
     </style>
     <script>
+      function goToIndexPage() {
+        window.location.href = "index.html";
+      }
       function showConfirmation() {
-        // Display a confirmation dialog for deletion
-        var userConfirmed = confirm("추가되었습니다");
+        // 양식 유효성 검사를 수행합니다.
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var age = document.getElementById("age").value;
 
-        // If user clicks "OK" in the confirmation dialog, proceed with deletion
+        if (!name || !email || !gender || !age) {
+          alert("양식을 모두 작성해주세요.");
+          return;
+        }
+
+        var userConfirmed = alert("게시물이 추가됩니다");
+
         if (userConfirmed) {
-          window.location.href = "index.html";
+          document.forms["addForm"].submit();
         }
       }
     </script>
   </head>
   <body>
-    <form>
+    <form action="">
       <h1>새로운 친구 등록</h1>
       <label for="name">이름:</label>
       <input type="text" id="name" name="name" /><br /><br />
@@ -128,6 +150,7 @@
       ><br /><br />
 
       <button class="button" onclick="showConfirmation()">제출</button>
+      <button class="button" onclick="goToIndexPage()">홈으로</button>
     </form>
   </body>
 </html>
