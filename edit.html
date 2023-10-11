@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>°Ô½Ã¹° Ãß°¡</title>
+    <title>ê²Œì‹œë¬¼ ì¶”ê°€</title>
 
     <style>
       body {
         font-family: Arial, sans-serif;
         text-align: center;
-        background-color: #f0e6d2; /* Å©¸² »ö ¹è°æ */
+        background-color: #f0e6d2;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* È­¸é ³ôÀÌ¿¡ ¸Â°Ô Á¤·Ä */
+        height: 100vh;
       }
       h1 {
         color: #333;
@@ -71,34 +71,47 @@
       .radio-group label {
         margin-right: 10px;
       }
+      .button {
+        background-color: #0073e6;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
     </style>
     <script>
-      function validateForm() {
+      function goToIndexPage() {
+        window.location.href = "index.html";
+      }
+      function showConfirmation() {
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
+        var gender = document.querySelector('input[name="gender"]:checked');
         var age = document.getElementById("age").value;
 
-        if (name === "" || email === "" || age === "") {
-          alert("¸ğµç ÇÊµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-          return false; // Á¦Ãâ ¹æÁö
+        if (!name || !email || !gender || !age) {
+          alert("í•„ìˆ˜ ì–‘ì‹ì„ ëª¨ë‘ ì‘ì„±í•´ì£¼ì„¸ìš”.");
+          return;
         }
 
-        if (isNaN(age) || age < 0) {
-          alert("³ªÀÌ´Â À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù.");
-          return false; // Á¦Ãâ ¹æÁö
-        }
+        var userConfirmed = confirm("ê²Œì‹œë¬¼ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤");
 
-        return true; // Á¦Ãâ Çã¿ë
+        if (userConfirmed) {
+          document.forms["addForm"].submit();
+        }
       }
     </script>
   </head>
   <body>
     <form>
-      <h1>±âÁ¸ ÇÁ·ÎÇÊ ¼öÁ¤</h1>
-      <label for="name">ÀÌ¸§:</label>
-      <input type="text" id="name" name="name" value="°­ÁØ¿ø" /><br /><br />
+      <h1>ê¸°ì¡´ í”„ë¡œí•„ ìˆ˜ì •</h1>
+      <label for="name">ì´ë¦„:</label>
+      <input type="text" id="name" name="name" value="ê°•ì¤€ì›" /><br /><br />
 
-      <label for="email">ÀÌ¸ŞÀÏ:</label>
+      <label for="email">ì´ë©”ì¼:</label>
       <input
         type="email"
         id="email"
@@ -107,48 +120,44 @@
       /><br /><br />
 
       <div class="radio-group">
-        <label>¼ºº°:</label>
-        <input type="radio" id="male" name="gender" value="³²¼º" checked />
-        <label for="male">³²¼º</label>
-        <input type="radio" id="female" name="gender" value="¿©¼º" />
-        <label for="female">¿©¼º</label>
+        <label>ì„±ë³„:</label>
+        <input type="radio" id="male" name="gender" value="ë‚¨ì„±" checked />
+        <label for="male">ë‚¨ì„±</label>
+        <input type="radio" id="female" name="gender" value="ì—¬ì„±" />
+        <label for="female">ì—¬ì„±</label>
       </div>
 
       <br />
 
-      <label for="age">³ªÀÌ:</label>
+      <label for="age">ë‚˜ì´:</label>
       <input type="number" id="age" name="age" value="20" /><br /><br />
 
-      <label for="color">ÁÁ¾ÆÇÏ´Â »ö»ó:</label>
+      <label for="color">ì¢‹ì•„í•˜ëŠ” ìƒ‰ìƒ:</label>
       <select id="color" name="color">
-        <option value="»¡°­">»¡°­</option>
-        <option value="ÆÄ¶û">ÆÄ¶û</option>
-        <option value="³ë¶û">³ë¶û</option>
-        <option value="ÃÊ·Ï">ÃÊ·Ï</option></select
+        <option value="ë¹¨ê°•">ë¹¨ê°•</option>
+        <option value="íŒŒë‘">íŒŒë‘</option>
+        <option value="ë…¸ë‘">ë…¸ë‘</option>
+        <option value="ì´ˆë¡">ì´ˆë¡</option></select
       ><br /><br />
 
-      <label for="hobby">Ãë¹Ì:</label>
+      <label for="hobby">ì·¨ë¯¸:</label>
       <select id="hobby" name="hobby">
-        <option value="À½¾Ç">À½¾Ç</option>
-        <option value="¿µÈ­">¿µÈ­</option>
-        <option value="¿©Çà">¿©Çà</option></select
+        <option value="ìŒì•…">ìŒì•…</option>
+        <option value="ì˜í™”">ì˜í™”</option>
+        <option value="ì—¬í–‰">ì—¬í–‰</option></select
       ><br /><br />
 
-      <label for="birthdate">»ıÀÏ:</label>
+      <label for="birthdate">ìƒì¼:</label>
       <input type="date" id="birthdate" name="birthdate" value="2004-05-19" />
       <br /><br />
 
-      <label for="message">¸Ş¸ğ:</label><br />
+      <label for="message">ë©”ëª¨:</label><br />
       <textarea id="message" name="message" rows="4" cols="50"></textarea
       ><br /><br />
 
-      <input type="submit" value="Á¦Ãâ" onclick="showConfirmation()" />
+      <a herf="index.html" class="button" onclick="showConfirmation()">ì œì¶œ</a>
+
+      <a herf="index.html" class="button" onclick="goToIndexPage()">í™ˆìœ¼ë¡œ</a>
     </form>
-    <script>
-      function showConfirmation() {
-        confirm("°Ô½Ã¹°ÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù");
-        window.location.href = "index.html"; // index.html·Î ÀÌµ¿
-      }
-    </script>
   </body>
 </html>

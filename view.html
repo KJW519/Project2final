@@ -6,14 +6,14 @@
       body {
         font-family: Arial, sans-serif;
         text-align: center;
-        background-color: #f0e6d2; /* 크림 색 배경 */
+        background-color: #f0e6d2;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* 화면 높이에 맞게 정렬 */
+        height: 100vh;
       }
       h1 {
         color: #333;
@@ -54,7 +54,7 @@
         margin-right: 10px;
       }
       button.edit-button {
-        background-color: #00cc00; /* 수정 버튼 색상 */
+        background-color: #00cc00;
       }
     </style>
   </head>
@@ -88,14 +88,12 @@
 
       <button class="button" onclick="deleteRecord()">삭제</button>
       <a class="button edit-button" href="edit.html">수정</a>
-      <!-- 수정 페이지로 이동 -->
     </div>
 
     <script>
       function deleteRecord() {
-        // 여기에서 데이터 삭제 또는 처리를 수행할 수 있습니다.
         confirm("게시물이 삭제되었습니다");
-        window.location.href = "index.html"; // 삭제 후 index.html로 이동
+        window.location.href = "index.html";
       }
     </script>
   </body>
